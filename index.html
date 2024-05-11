@@ -4,8 +4,10 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="./dist/css/style.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link href="https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic" rel="stylesheet" />
-        <script src="./dist/app.js" defer></script>
+        <script src="./dist/app.js" type="module" defer></script>
         <title>Чистюля - клининг услуги</title>
     </head>
     <body>
@@ -54,6 +56,167 @@
                     </div>
                 </div>
             </section>
+            <section class="second-section" id="reviews">
+                <div class="container second-section__container">
+                    <h2 class="second-section__title">Наши работы</h2>
+                    <div class="slider">
+                        <div class="slider__btn slider__btn-left">&LT;</div>
+                        <div class="slider__wrapper">
+                            <div class="owl-carousel">
+                                <!-- 1 -->
+                                <div class="slider__card">
+                                    <div class="slider__left">
+                                        <h3 class="slider__title">Уборка офиса</h3>
+                                        <p class="slider__adress">г. Владимир, прос. Строителей</p>
+                                        <div class="slider__line"></div>
+                                        <p class="slider__review">Офис просто в идеальном состоянии! Даже ничего не украли) Всем советую.</p>
+                                        <div class="slider__rates">
+                                            <img src="./src/assets/star.png" alt="" />
+                                            <img src="./src/assets/star.png" alt="" />
+                                            <img src="./src/assets/star.png" alt="" />
+                                            <img src="./src/assets/star.png" alt="" />
+                                            <img src="./src/assets/star.png" alt="" />
+                                        </div>
+                                    </div>
+                                    <div class="slider__right">
+                                        <img src="./src/assets/office.webp" alt="" />
+                                    </div>
+                                </div>
+                                <!-- 2 -->
+                                <div class="slider__card">
+                                    <div class="slider__left">
+                                        <h3 class="slider__title">Уборка кухни</h3>
+                                        <p class="slider__adress">г. Владимир, ул. Мира (Наталья)</p>
+                                        <div class="slider__line"></div>
+                                        <p class="slider__review">Все очень шикарно, все круто! Все очень чисто и ухоженно! Стала по новому дышать</p>
+                                        <div class="slider__rates">
+                                            <img src="./src/assets/star.png" alt="" />
+                                            <img src="./src/assets/star.png" alt="" />
+                                            <img src="./src/assets/star.png" alt="" />
+                                            <img src="./src/assets/star.png" alt="" />
+                                            <img src="./src/assets/star.png" alt="" />
+                                        </div>
+                                    </div>
+                                    <div class="slider__right">
+                                        <img src="./src/assets/kitchen.png" alt="" />
+                                    </div>
+                                </div>
+                                <!-- 3 -->
+                                <div class="slider__card">
+                                    <div class="slider__left">
+                                        <h3 class="slider__title">Уборка дома</h3>
+                                        <p class="slider__adress">г. Радужный, ул. Ленина (Александр)</p>
+                                        <div class="slider__line"></div>
+                                        <p class="slider__review">В принципе, все отлично, однако потом еще сутки пахло хлоркойЮ но это ничего страшного.</p>
+                                        <div class="slider__rates">
+                                            <img src="./src/assets/star.png" alt="" />
+                                            <img src="./src/assets/star.png" alt="" />
+                                            <img src="./src/assets/star.png" alt="" />
+                                            <img src="./src/assets/star.png" alt="" />
+                                            <img src="./src/assets/empty_star.png" alt="" />
+                                        </div>
+                                    </div>
+                                    <div class="slider__right">
+                                        <img src="./src/assets/house.jpeg" alt="" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slider__btn slider__btn-right">&GT;</div>
+                    </div>
+                </div>
+            </section>
+            <section class="third-section" id="services">
+                <div class="container third-section__container">
+                    <div class="third-section__title-wrapper">
+                        <h2 class="third-section__title">Наши услуги</h2>
+                        <p>Подробнее об услугах по номеру <a href="tel:88005553535">8(800)555-35-35</a></p>
+                    </div>
+                    <div class="third-section__cards">
+                        <!-- 1 -->
+                        <div class="third-section__card">
+                            <img src="./src/assets/room.svg" alt="room" />
+                            <div class="third-section__card-line"></div>
+                            <h3>Уборка 1 комнаты</h3>
+                            <div class="third-section__card-footer">
+                                <p>3000₽</p>
+                                <button>В корзину</button>
+                            </div>
+                        </div>
+                        <!-- 2 -->
+                        <div class="third-section__card">
+                            <img src="./src/assets/flats.svg" alt="flat" />
+                            <div class="third-section__card-line"></div>
+                            <h3>Уборка квартиры</h3>
+                            <div class="third-section__card-footer">
+                                <p>9000₽</p>
+                                <button>В корзину</button>
+                            </div>
+                        </div>
+                        <!-- 3 -->
+                        <div class="third-section__card">
+                            <img src="./src/assets/house-card.svg" alt="house" />
+                            <div class="third-section__card-line"></div>
+                            <h3>Уборка дома</h3>
+                            <div class="third-section__card-footer">
+                                <p>12000₽</p>
+                                <button>В корзину</button>
+                            </div>
+                        </div>
+                        <!-- 4 -->
+                        <div class="third-section__card">
+                            <img src="./src/assets/office-card.svg" alt="office" />
+                            <div class="third-section__card-line"></div>
+                            <h3>Уборка офиса</h3>
+                            <div class="third-section__card-footer">
+                                <p>10000₽</p>
+                                <button>В корзину</button>
+                            </div>
+                        </div>
+                        <!-- 5 -->
+                        <div class="third-section__card">
+                            <img src="./src/assets/general.svg" alt="general" />
+                            <div class="third-section__card-line"></div>
+                            <h3>Генеральная уборка</h3>
+                            <div class="third-section__card-footer">
+                                <p>20000₽</p>
+                                <button>В корзину</button>
+                            </div>
+                        </div>
+                        <!-- 6 -->
+                        <div class="third-section__card">
+                            <img src="./src/assets/PLUS.svg" alt="plus" />
+                            <div class="third-section__card-line"></div>
+                            <h3>Генеральная уборка plus</h3>
+                            <div class="third-section__card-footer">
+                                <p>25000₽</p>
+                                <button>В корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="third-section__footer"></div>
+            </section>
         </main>
+        <footer class="footer">
+            <img src="./src/assets/logo.svg" alt="logo" />
+            <nav class="footer__nav">
+                <ul class="footer__nav-list">
+                    <li class="footer__nav-item">
+                        <a href="#reviews">Отзывы</a>
+                    </li>
+                    <li class="footer__nav-item">
+                        <a href="#services">Услуги</a>
+                    </li>
+                    <li class="footer__nav-item">
+                        <a href="./cart.html" target="_blank"> Корзина </a>
+                    </li>
+                </ul>
+            </nav>
+            <p>© ИП Чичерина Е. С.</p>
+        </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     </body>
 </html>
