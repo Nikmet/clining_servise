@@ -1,11 +1,74 @@
-// const SLIDER_BTN_RIGHT = document.querySelector(".slider__btn-right");
-// const SLIDER_WRAPPER = document.querySelector(".slider__wrapper");
+const CARDS = document.querySelector(".third-section__cards");
+let owl = $(".owl-carousel");
 
-// SLIDER_BTN_RIGHT.addEventListener("click", function (e) {
-//     SLIDER_WRAPPER.style.marginLeft = "1100px";
-// });
+const cart = [{ header: "test", price: "1000p" }];
 
-var owl = $(".owl-carousel");
+function openCart() {
+    let total = 0;
+
+    for (const product of cart) {
+        total += Number(product.price.slice(0, product.price.length - 1));
+    }
+
+    const html = `
+        <div class="cart">
+            <div class="cart__title">
+                <h4>Корзина</h4>
+                <button id="cart_close">Закрыть</button>
+            </div>
+            <div class="cart__wrapper">
+
+            </div>
+            <div class="cart__line"></div>
+            <div class="cart__footer">
+                <p>ИТОГО:</p>
+                <p>${total}₽</p>
+            </div>
+            <input type="phone" placeholder="Введите номер для оплаты">
+            <button id="cart_buy">Оплатить</button>
+        </div>
+    `;
+
+    document.body.insertAdjacentHTML("beforeend", html);
+
+    const CART_WRAPPER = document.querySelector(".cart__wrapper");
+    for (const product of cart) {
+        CART_WRAPPER.insertAdjacentHTML(
+            "beforeend",
+            `
+            <div class="cart__stroke">
+                <p>${product.header}</p>
+                <p>${product.price}</p>
+            </div>
+        `
+        );
+    }
+
+    document.querySelector("#cart_close").addEventListener("click", e => {
+        e.preventDefault();
+        document.body.style.overflowY = "scroll";
+        document.querySelector(".cart").remove();
+    });
+
+    document.querySelector("#cart_buy").addEventListener("click", e => {
+        e.preventDefault();
+        const INPUT = document.querySelector("input");
+
+        if (INPUT.value !== "") {
+            document.querySelector(".cart").innerHTML = `
+                Ожидаем оплату...
+            `;
+
+            setTimeout(() => {
+                document.body.style.overflowY = "scroll";
+                document.querySelector(".cart").remove();
+                alert("Оплата прошла успешно! Спасибо за покупку, наш менеджер свяжется с вами в течении суток.");
+            }, 2000);
+        } else {
+            alert("Введите номер телефона!");
+        }
+    });
+}
 
 owl.owlCarousel({
     center: true,
@@ -23,4 +86,22 @@ $(".slider__btn-left").click(function () {
     owl.trigger("prev.owl.carousel");
 });
 
-console.log([1, 2, 3]);
+CARDS.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    if (e.target.classList.contains("add-to-cart")) {
+        const header = e.target.closest(".third-section__card").querySelector("h3").innerHTML;
+        const price = e.target.closest(".third-section__card").querySelector("p").innerHTML;
+        cart.push({
+            header,
+            price,
+        });
+        alert(`Вы добавили ${header} в корзину`);
+    }
+});
+
+$(".cart-btn").click(e => {
+    e.preventDefault();
+    document.body.style.overflowY = "hidden";
+    openCart();
+});
