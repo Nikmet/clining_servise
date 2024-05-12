@@ -1,7 +1,7 @@
 const CARDS = document.querySelector(".third-section__cards");
 let owl = $(".owl-carousel");
 
-const cart = [{ header: "test", price: "1000p" }];
+const cart = [];
 
 function openCart() {
     let total = 0;
@@ -61,6 +61,9 @@ function openCart() {
 
             setTimeout(() => {
                 document.body.style.overflowY = "scroll";
+                document.querySelector("header").style.filter = "blur(0px)";
+                document.querySelector("main").style.filter = "blur(0px)";
+                document.querySelector("footer").style.filter = "blur(0px)";
                 document.querySelector(".cart").remove();
                 alert("Оплата прошла успешно! Спасибо за покупку, наш менеджер свяжется с вами в течении суток.");
             }, 2000);
@@ -75,7 +78,7 @@ owl.owlCarousel({
     loop: true,
     margin: 1100,
     startPosition: 1,
-    smartSpeed: 800,
+    smartSpeed: 500,
     items: 1,
 });
 // Go to the next item
@@ -103,5 +106,8 @@ CARDS.addEventListener("click", function (e) {
 $(".cart-btn").click(e => {
     e.preventDefault();
     document.body.style.overflowY = "hidden";
+    document.querySelector("header").style.filter = "blur(5px)";
+    document.querySelector("main").style.filter = "blur(5px)";
+    document.querySelector("footer").style.filter = "blur(5px)";
     openCart();
 });
